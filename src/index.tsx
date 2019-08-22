@@ -13,9 +13,9 @@ import "./index.less"
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import { BIP70 } from "./components/BIP70"
+import  Routes from "./components/Routes"
 
 ReactDOM.render(
-  <BIP70 compiler="TypeScript" framework="ReactJS" />,
+  <Routes compiler="TypeScript" framework="ReactJS" />,
   document.getElementById("app")
 )
