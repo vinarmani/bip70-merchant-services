@@ -1,15 +1,25 @@
 import * as React from "react"
 
 import { Link } from "react-router-dom";
-import cryptoSVG from "../../src/img/crypto.svg"
-
+import cryptoSVG from "../img/crypto.svg"
 
 export interface InitProps {
 }
 
-export class Init extends React.Component<InitProps, any> {
-  state = {
-    isValid: false
+interface InitState {
+  isValid: boolean,
+  id: string,
+  errorMsg: string,
+  response: object
+}
+
+export class Init extends React.Component<InitProps, InitState> {
+
+  state: InitState = {
+    isValid: false,
+    id: '',
+    errorMsg: '',
+    response: {}
   }
 
   markValid() {
@@ -27,31 +37,52 @@ export class Init extends React.Component<InitProps, any> {
     } else {
       this.markInvalid()
     }
+
+    this.setState({ id: value })
   }
 
   validateID = (id: string) => {
-    // make request to bitcoin.com to validate merchant id/pin
+    // mock api response with merchant id
+    const mockResponse = {
+      apiKey: "asdjfew7yoyhafsadfa",
+      success: true
+    }
+
+    if (!mockResponse.success) {
+      return this.setState({ errorMsg: 'invalid id' })
+    }
+
+    this.setState({
+      response: mockResponse
+    })
+
   }
 
   render(): JSX.Element {
-    const { isValid } = this.state
+    const { isValid, id, response, errorMsg } = this.state
     return (
       <div className="wrapper">
         <h1 className="merchant-header">Welcome to your Bitcoin Cash Register</h1>
-        <img src={cryptoSVG}  style={{maxHeight: '30vh'}}/>
+        <img src={cryptoSVG} style={{ maxHeight: "30vh" }} />
         <div className="merchant-input">
           <label htmlFor="merchant">Enter merchant ID</label>
           <input
-          name="merchant"
-          type="text"
-          onChange={e => {
-            this.handleOnChange(e);
+            name="merchant"
+            type="text"
+            onChange={e => {
+              this.handleOnChange(e);
             }}
           />
+          {errorMsg && <div className="error"> error msg </div>}
         </div>
 
-        <div className={`merchant-proceed ${isValid ? 'active' : 'disabled'}`}>
-          <Link to="/invoice"> Proceed </Link>
+        <div className={`merchant-proceed ${isValid ? "active" : "disabled"}`} onClick={() => { this.validateID(id) }}>
+          <Link to={{
+            pathname: "/invoice",
+            response
+          }}>
+            Proceed
+          </Link>
         </div>
       </div>
     );
