@@ -47,6 +47,9 @@
     "slp-sdk": "^4.7.0",
     "websocket": "^1.0.29"
   },
+  "prettier": {
+    "singleQuote": false
+  },
   "devDependencies": {
     "@types/jasmine": "~2.5.46",
     "@types/node": "~6.0.60",

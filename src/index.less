@@ -1,17 +1,19 @@
-@import '~bootstrap-less/bootstrap/index';
-@import 'less/BadgerButton';
-@import 'less/BIP70';
-@import 'less/Card';
-@import 'less/Copied';
-@import 'less/Details';
-@import 'less/Expired';
-@import 'less/Info';
-@import 'less/Init';
-@import 'less/Limit';
-@import 'less/NeedHelp';
-@import 'less/Open';
-@import 'less/Paid';
-@import 'less/PoweredBy';
+@import "~bootstrap-less/bootstrap/index";
+@import "less/BadgerButton";
+@import "less/BIP70";
+@import "less/Card";
+@import "less/Copied";
+@import "less/Details";
+@import "less/Expired";
+@import "less/Info";
+@import "less/Init";
+@import "less/Invoice";
+@import "less/BchInput";
+@import "less/Limit";
+@import "less/NeedHelp";
+@import "less/Open";
+@import "less/Paid";
+@import "less/PoweredBy";
 
 @brand: #0ac18e;
 
@@ -19,7 +21,7 @@ body {
   background: #fbfcff;
   text-align: center;
   color: #212529;
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
 
   .brandGreen {
     color: @brand;
@@ -43,7 +45,7 @@ body {
     height: 50px;
     margin-bottom: 2%;
     font-size: 1.5em;
-    font-family: 'Gilroy', sans-serif;
+    font-family: "Gilroy", sans-serif;
   }
 }
 a:hover {
@@ -52,6 +54,7 @@ a:hover {
 
 .wrapper {
   max-width: 1100px;
+  margin: 0 auto;
   @media (max-width: 700px) {
     padding: 1.5rem;
   }

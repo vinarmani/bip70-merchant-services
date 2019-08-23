@@ -1,68 +1,67 @@
-import * as React from "react"
+import * as React from "react";
 
 import { Link } from "react-router-dom";
-import cryptoSVG from "../img/crypto.svg"
+import cryptoSVG from "../img/crypto.svg";
 
-export interface InitProps {
-}
+export interface InitProps {}
 
 interface InitState {
-  isValid: boolean,
-  id: string,
-  errorMsg: string,
-  response: object
+  isValid: boolean;
+  id: string;
+  errorMsg: string;
+  response: object;
 }
 
 export class Init extends React.Component<InitProps, InitState> {
-
   state: InitState = {
     isValid: false,
-    id: '',
-    errorMsg: '',
+    id: "",
+    errorMsg: "",
     response: {}
-  }
+  };
 
   markValid() {
-    this.setState({ isValid: true })
+    this.setState({ isValid: true });
   }
 
   markInvalid() {
-    this.setState({ isValid: false })
+    this.setState({ isValid: false });
   }
 
   handleOnChange = (e: any) => {
-    const value: string = e.target.value
+    const value: string = e.target.value;
     if (value.length >= 4) {
-      this.markValid()
+      this.markValid();
     } else {
-      this.markInvalid()
+      this.markInvalid();
     }
 
-    this.setState({ id: value })
-  }
+    this.setState({ id: value });
+  };
 
   validateID = (id: string) => {
     // mock api response with merchant id
     const mockResponse = {
       apiKey: "asdjfew7yoyhafsadfa",
       success: true
-    }
-
-    if (!mockResponse.success) {
-      return this.setState({ errorMsg: 'invalid id' })
-    }
+    };
 
     this.setState({
       response: mockResponse
-    })
+    });
 
-  }
+    if (!mockResponse.success) {
+      return this.setState({ errorMsg: "invalid id" });
+    }
+  };
 
   render(): JSX.Element {
-    const { isValid, id, response, errorMsg } = this.state
+    const { isValid, id, response, errorMsg } = this.state;
     return (
       <div className="wrapper">
-        <h1 className="merchant-header">Welcome to your Bitcoin Cash Register</h1>
+        <h1 className="merchant-header">
+          Welcome to your Bitcoin Cash Register
+        </h1>
         <img src={cryptoSVG} style={{ maxHeight: "30vh" }} />
         <div className="merchant-input">
           <label htmlFor="merchant">Enter merchant ID</label>
@@ -76,11 +75,18 @@ export class Init extends React.Component<InitProps, InitState> {
           {errorMsg && <div className="error"> error msg </div>}
         </div>
 
-        <div className={`merchant-proceed ${isValid ? "active" : "disabled"}`} onClick={() => { this.validateID(id) }}>
-          <Link to={{
-            pathname: "/invoice",
-            response
-          }}>
+        <div
+          className={`merchant-proceed ${isValid ? "active" : "disabled"}`}
+          onClick={() => {
+            this.validateID(id);
+          }}
+        >
+          <Link
+            to={{
+              pathname: "/invoice",
+              response
+            }}
+          >
             Proceed
           </Link>
         </div>
