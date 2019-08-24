@@ -1,18 +1,72 @@
+.bch-input-container {
+  color: #5451c9;
+}
+
 .bch-input {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-row-gap: 3vmax;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 2vmax;
 }
 .bch-input p:active {
   font-weight: bold;
 }
 .bch-input p {
-  padding: 2rem 0;
+  padding: 1.2vmax 0;
   font-size: 2vmax;
   cursor: pointer;
+  margin: 0;
 }
 
 .bch-input-display h1 {
-  font-size: 5vmax;
+  font-size: calc(2vmin + 1.5vh + 1.8vw);
   margin: 4rem 6rem;
+  font-weight: bold;
+}
+
+.bch-input-payment {
+  display: grid;
+  align-items: baseline;
+  margin: 2rem auto;
+  grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
+}
+.token {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 1rem;
+  padding: 0.4rem;
+}
+.token-image {
+  border-radius: 100%;
+  display: inline-flex;
+  padding: 0.5rem;
+}
+.token-image img {
+  width: 5vmax;
+  height: 5vmax;
+  object-fit: contain;
+}
+.token-description {
+  flex-basis: 100%;
+}
+.token-description h4 {
+  margin: 0;
+}
+.token.selected {
+  background: #5551c9;
+  color: #fbfcff;
+  border-radius: 5px;
+}
+
+.bch-pay-with {
+  font-size: 1.9vmax;
+  text-align: start;
+  margin-left: 1.5rem;
+
+  /* ipad styles */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 }

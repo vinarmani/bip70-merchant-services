@@ -63,17 +63,14 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
     } = this.state;
 
     return (
-      <div className="wrapper">
+      <React.Fragment>
         <BchInput
           companyName={companyName}
           markValid={this.markValid}
           markInvalid={this.markInvalid}
         />
 
-        <div
-          className={`merchant-proceed ${isValid ? "active" : "disabled"}`}
-          style={{ marginTop: "8rem" }}
-        >
+        <div className={`merchant-proceed ${isValid ? "active" : "disabled"}`}>
           <Link
             to={{
               pathname: "/request"
@@ -82,7 +79,7 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
             Request
           </Link>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
