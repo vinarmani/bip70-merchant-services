@@ -1,10 +1,13 @@
 import * as React from "react";
 
+import axios from "axios";
+import { AxiosResponse } from "axios";
 import { Link } from "react-router-dom";
 import BchInput from "./bch-input";
 
 export interface InvoiceProps {
   location: object;
+  history: any;
 }
 
 interface InvoiceState {
@@ -15,6 +18,7 @@ interface InvoiceState {
     destinationAddress: string;
     companyName: string;
   };
+  bip70Payload: object;
   isValid: boolean;
 }
 
@@ -27,12 +31,11 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
       destinationAddress: "",
       companyName: ""
     },
+    bip70Payload: {},
     isValid: false
   };
 
   componentDidMount = () => {
-    const { location } = this.props;
-
     this.getMerchantInfo("apikey");
   };
 
@@ -49,6 +52,10 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
     };
   };
 
+  updateBip70Payload = (obj: object) => {
+    this.setState({ bip70Payload: obj });
+  };
+
   markValid = () => {
     this.setState({ isValid: true });
   };
@@ -56,10 +63,26 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
     this.setState({ isValid: false });
   };
 
+  submitPayload = async () => {
+    const { bip70Payload } = this.state;
+
+    const {
+      history: { push }
+    } = this.props;
+    const { data }: AxiosResponse = await axios.post(
+      `https://pay.bitcoin.com/create_invoice`,
+      bip70Payload
+    );
+
+    const { paymentId } = data;
+    push(`/i/${paymentId}`);
+  };
+
   render(): JSX.Element {
     const {
       merchant: { companyName },
-      isValid
+      isValid,
+      bip70Payload
     } = this.state;
 
     return (
@@ -68,16 +91,16 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
           companyName={companyName}
           markValid={this.markValid}
           markInvalid={this.markInvalid}
+          updateBip70Payload={this.updateBip70Payload}
         />
 
-        <div className={`merchant-proceed ${isValid ? "active" : "disabled"}`}>
-          <Link
-            to={{
-              pathname: "/request"
-            }}
-          >
-            Request
-          </Link>
+        <div
+          className={`merchant-proceed ${isValid ? "active" : "disabled"}`}
+          onClick={() => {
+            this.submitPayload();
+          }}
+        >
+          Request
         </div>
       </React.Fragment>
     );

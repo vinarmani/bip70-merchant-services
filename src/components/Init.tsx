@@ -47,7 +47,8 @@ export class Init extends React.Component<InitProps, InitState> {
     };
 
     this.setState({
-      response: mockResponse
+      response: mockResponse,
+      errorMsg: ""
     });
 
     if (!mockResponse.success) {

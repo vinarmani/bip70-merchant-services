@@ -1,6 +1,8 @@
 import * as React from "react";
 
 import BigNumber from "bignumber.js";
+import axios from "axios";
+import { AxiosResponse } from "axios";
 import { Display } from "./display";
 import { Keypad } from "./keypad";
 import { Payment } from "./payment";
@@ -11,6 +13,7 @@ export interface BchInputProps {
   companyName: string;
   markValid: Function;
   markInvalid: Function;
+  updateBip70Payload: Function;
 }
 
 interface BchInputState {
@@ -19,7 +22,13 @@ interface BchInputState {
   stringValue: string;
   currency: string;
   decimalPressed: boolean;
-  selectedPaymentType: object;
+  selectedPaymentType: {
+    name: string;
+    ticker: string;
+    tokenID: string;
+    decimal_count: number;
+    imagePath: string;
+  };
 }
 
 class BchInput extends React.Component<BchInputProps, BchInputState> {
@@ -32,19 +41,18 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
     selectedPaymentType: null
   };
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     this.setStringValue();
-    this.getFiatDecimalPlaces();
   };
 
   getFiatDecimalPlaces = () => {
     const { currency } = this.state;
-    const string = new Intl.NumberFormat(language, {
+    const currencyString = new Intl.NumberFormat(language, {
       style: "currency",
       currency: currency
     }).formatToParts(1);
 
-    const length = string[3].value.length;
+    const length = currencyString[3].value.length;
     return length;
   };
 
@@ -55,26 +63,27 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
     const big = new BigNumber(floatVal);
     const fixed: any = big.toFixed(length);
 
-    const string = new Intl.NumberFormat(language, {
+    const currencyString = new Intl.NumberFormat(language, {
       style: "currency",
       currency: currency
     }).format(fixed);
 
-    this.setState({ stringValue: string });
+    this.setState({ stringValue: currencyString });
   };
 
   updateInput = async (val: number) => {
     await this.updateIntVal(val);
     await this.setStringValue();
     this.checkValid();
+    await this.constructBip70Payload();
   };
 
   deleteInput = async () => {
     const { floatVal } = this.state;
-    const string = floatVal.toString().slice(0, -1);
+    const floatString = floatVal.toString().slice(0, -1);
 
-    const int = parseFloat(string);
-    const big = new BigNumber(string);
+    const int = parseFloat(floatString);
+    const big = new BigNumber(floatString);
     if (!isNaN(int)) {
       await this.setState({
         floatVal: int,
@@ -155,6 +164,88 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
 
   addSelection = async (data: object) => {
     await this.setState({ selectedPaymentType: data });
+  };
+
+  getBCHPrice = async () => {
+    const {
+      data: {
+        data: { priceUsd }
+      }
+    }: AxiosResponse = await axios.get(
+      `https://api.coincap.io/v2/assets/bitcoin-cash`
+    );
+
+    return priceUsd;
+  };
+
+  getSpiceAmount = async (fiatValue: number) => {
+    const {
+      data: { last_price }
+    }: AxiosResponse = await axios.get(
+      `https://api.cryptophyl.com/products/SPICE-BCH/ticker`
+    );
+
+    const bchPrice = await this.getBCHPrice();
+    const bchCost = fiatValue / bchPrice;
+    const spiceAmount = bchCost / last_price;
+    return parseFloat(spiceAmount.toFixed(8));
+  };
+
+  constructBip70Payload = async () => {
+    const {
+      floatVal,
+      stringValue,
+      selectedPaymentType: { tokenID },
+      currency
+    } = this.state;
+    const { updateBip70Payload } = this.props;
+    const decimalPlaces: number = this.getFiatDecimalPlaces();
+
+    const isSLP = tokenID !== "";
+    if (isSLP) {
+      const spiceAmount = await this.getSpiceAmount(floatVal);
+
+      const slpTxRequest: {
+        token_id: string;
+        slp_outputs: { address: string; amount: number }[];
+      } = {
+        token_id: tokenID,
+        slp_outputs: [
+          { address: "1Nmo9N3ZVsL8GFrv6uNfr55a9ni4RoT7Fn", amount: spiceAmount }
+        ]
+      };
+
+      return updateBip70Payload(slpTxRequest);
+    } else {
+      // get fiat params
+
+      console.log("in bch", floatVal);
+
+      const bchTxRequest: {
+        outputs: {
+          script?: string;
+          amount?: number;
+          fiatAmount?: AnyKindOfDictionary;
+          address?: string;
+        }[];
+        currency?: string;
+        fiat?: string;
+        fiatRate?: number;
+      } = {
+        fiat: currency,
+        outputs: [
+          // {
+          //   script: "76a914018a532856c45d74f7d67112547596a03819077188ac",
+          //   amount: 700
+          // },
+          {
+            address: "bitcoincash:qqztecjxmglf6hdhhggrc20zgzf7grfz7q6vkhx6jl",
+            fiatAmount: floatVal.toFixed(decimalPlaces)
+          }
+        ]
+      };
+      return updateBip70Payload(bchTxRequest);
+    }
   };
 
   render(): JSX.Element {

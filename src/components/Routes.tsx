@@ -10,7 +10,7 @@ function Routes() {
     <Router>
       <Route exact path="/" component={Init} />
       <Route path="/invoice" component={Invoice} />
-      <Route path="/request" component={BIP70} />
+      <Route path="/i/:paymentID" component={BIP70} />
     </Router>
   );
 }
