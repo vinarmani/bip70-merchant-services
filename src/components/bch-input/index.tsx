@@ -3,6 +3,7 @@ import * as React from "react";
 import BigNumber from "bignumber.js";
 import { Display } from "./display";
 import { Keypad } from "./keypad";
+import { Payment } from "./payment";
 
 const language = window.navigator.userLanguage || window.navigator.language;
 
@@ -18,6 +19,7 @@ interface BchInputState {
   stringValue: string;
   currency: string;
   decimalPressed: boolean;
+  selectedPaymentType: object;
 }
 
 class BchInput extends React.Component<BchInputProps, BchInputState> {
@@ -26,7 +28,8 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
     bigNumber: {},
     stringValue: "---",
     currency: "USD",
-    decimalPressed: false
+    decimalPressed: false,
+    selectedPaymentType: null
   };
 
   componentDidMount = () => {
@@ -150,17 +153,28 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
     }
   };
 
+  addSelection = async (data: object) => {
+    await this.setState({ selectedPaymentType: data });
+  };
+
   render(): JSX.Element {
     const { companyName } = this.props;
+    const { selectedPaymentType } = this.state;
     return (
-      <div>
+      <div className="bch-input-container">
         {companyName && <h4 style={{ marginBottom: "4rem" }}>{companyName}</h4>}
 
         <Display parentState={this.state} />
-        <Keypad
-          updateInput={this.updateInput}
-          deleteInput={this.deleteInput}
-          handleDecimal={this.handleDecimal}
+        <div className="wrapper">
+          <Keypad
+            updateInput={this.updateInput}
+            deleteInput={this.deleteInput}
+            handleDecimal={this.handleDecimal}
+          />
+        </div>
+        <Payment
+          addSelection={this.addSelection}
+          selectedPaymentType={selectedPaymentType}
         />
       </div>
     );
