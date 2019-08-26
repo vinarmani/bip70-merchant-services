@@ -202,6 +202,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
     const decimalPlaces: number = this.getFiatDecimalPlaces();
 
     const isSLP = tokenID !== "";
+
     if (isSLP) {
       const spiceAmount = await this.getSpiceAmount(floatVal);
 
@@ -214,13 +215,8 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
           { address: "1Nmo9N3ZVsL8GFrv6uNfr55a9ni4RoT7Fn", amount: spiceAmount }
         ]
       };
-
       return updateBip70Payload(slpTxRequest);
     } else {
-      // get fiat params
-
-      console.log("in bch", floatVal);
-
       const bchTxRequest: {
         outputs: {
           script?: string;
@@ -244,12 +240,13 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
           }
         ]
       };
+
       return updateBip70Payload(bchTxRequest);
     }
   };
 
   render(): JSX.Element {
-    const { companyName } = this.props;
+    const { companyName, markValid } = this.props;
     const { selectedPaymentType } = this.state;
     return (
       <div className="bch-input-container">
@@ -266,6 +263,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
         <Payment
           addSelection={this.addSelection}
           selectedPaymentType={selectedPaymentType}
+          constructBip70Payload={this.constructBip70Payload}
         />
       </div>
     );

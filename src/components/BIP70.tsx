@@ -1,60 +1,66 @@
-import * as React from "react"
-import { BadgerButton } from "./BadgerButton"
-import { PoweredBy } from "./PoweredBy"
-import { Card } from "./Card"
-import { Info } from "./Info"
-import axios from "axios"
-import { AxiosResponse } from "axios"
-import { css } from "@emotion/core"
-import { w3cwebsocket } from "websocket"
+import * as React from "react";
+import { BadgerButton } from "./BadgerButton";
+import { PoweredBy } from "./PoweredBy";
+import { Card } from "./Card";
+import { Info } from "./Info";
+import axios from "axios";
+import { AxiosResponse } from "axios";
+import { css } from "@emotion/core";
+import { w3cwebsocket } from "websocket";
 // First way to import
-import { RingLoader } from "react-spinners"
+import { RingLoader } from "react-spinners";
 const override = css`
   display: block;
   margin: 0 auto;
-`
+`;
 
 // Sample requests
 // import txSampleRequest from "./bchTxSampleRequest"
-import txSampleRequest from "./slpTxSampleRequest"
+import txSampleRequest from "./slpTxSampleRequest";
 
 // Sample Responses
 // import txSampleResponse from "./bchTxSampleResponse"
 // import txSampleResponse from "./slpTxSampleResponse"
 
 export interface BIP70Props {
-  compiler: string
-  framework: string
+  compiler: string;
+  framework: string;
+  location: any;
 }
 
 export class BIP70 extends React.Component<BIP70Props, any> {
   constructor(props: BIP70Props, context: any) {
-    super(props, context)
-    this.toggleStatus = this.toggleStatus.bind(this)
+    super(props, context);
+    this.toggleStatus = this.toggleStatus.bind(this);
     this.state = {
       loading: true
-    }
+    };
   }
 
   async componentDidMount(): Promise<any> {
     // GET existing invoice using websocket
-    let splitPath = location.pathname.split("/")
-    const paymentId: string = splitPath[splitPath.length - 1]
+    let splitPath = location.pathname.split("/");
+    const paymentId: string = splitPath[splitPath.length - 1];
     // let paymentId: string = "EW4CNuFCmYrPa7PjvwPcv8"
 
-    const client = new w3cwebsocket (`wss://pay.bitcoin.com/s/${paymentId}`, "echo-protocol");
+    const client = new w3cwebsocket(
+      `wss://pay.bitcoin.com/s/${paymentId}`,
+      "echo-protocol"
+    );
 
     client.onerror = function() {
-        console.log("Connection Error");
-    }
+      console.log("Connection Error");
+    };
 
-    const self = this
+    const self = this;
     client.onmessage = async function(e: any) {
+      console.log("e.data", e);
+
       if (typeof e.data === "string") {
-          self.updateInvoice(JSON.parse(e.data))
-          // console.log(e);
+        self.updateInvoice(JSON.parse(e.data));
+        // console.log(e);
       }
-    }
+    };
 
     // POST to create new invoice
     // const invoice: AxiosResponse = await axios.post(
@@ -70,64 +76,62 @@ export class BIP70 extends React.Component<BIP70Props, any> {
   }
 
   async updateInvoice(invoice: object): Promise<any> {
-    this.setState(invoice)
+    this.setState(invoice);
     this.setState({
       loading: false,
       qr: `https://pay.bitcoin.com/qr/${this.state.paymentId}`
-    })
+    });
 
     // Merchant data endpoint
     const merchantData: AxiosResponse = await axios.get(
       `https://pay.bitcoin.com/m/${this.state.paymentId}`,
       { headers: { Accept: "application/json" } }
-    )
+    );
 
-    this.setState(merchantData.data)
-    let totalAmount: number = 0
+    this.setState(merchantData.data);
+    let totalAmount: number = 0;
     if (this.state.currency === "BCH") {
       this.setState({
         symbol: "BCH"
-      })
+      });
       this.state.outputs.forEach(
         (output: {
-          address: string
-          amount: number
-          script: string
-          type: string
+          address: string;
+          amount: number;
+          script: string;
+          type: string;
         }) => {
-          totalAmount += output.amount
+          totalAmount += output.amount;
         }
-      )
-      totalAmount = totalAmount / 100000000
+      );
+      totalAmount = totalAmount / 100000000;
     } else if (this.state.currency === "SLP") {
       const response: AxiosResponse = await axios.get(
         `https://rest.bitcoin.com/v2/slp/list/${this.state.outputs[0].token_id}`
-      )
+      );
       totalAmount = this.state.outputs[0].send_amounts.reduce(
         (a: number, b: number) => a + b / 10 ** response.data.decimals,
         0
-      )
+      );
       this.setState({
         symbol: response.data.symbol
-      })
+      });
     }
     this.setState({
       totalAmount: totalAmount
-    })
+    });
   }
 
   toggleStatus(): void {
     this.setState({
       status: "expired"
-    })
+    });
   }
 
   render(): JSX.Element {
-    let badgerButton: any
+    let badgerButton: any;
     if (this.state.status === "open") {
-      badgerButton = <BadgerButton
-          paymentUrl={this.state.paymentUrl}
-      />
+      badgerButton = <BadgerButton paymentUrl={this.state.paymentUrl} />;
     }
 
     return (
@@ -162,6 +166,6 @@ export class BIP70 extends React.Component<BIP70Props, any> {
         {badgerButton}
         <PoweredBy />
       </div>
-    )
+    );
   }
 }

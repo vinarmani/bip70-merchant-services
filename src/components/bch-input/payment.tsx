@@ -27,6 +27,7 @@ export interface PaymentProps {
     decimal_count: number;
     imagePath: string;
   };
+  constructBip70Payload: Function;
 }
 
 interface PaymentState {}
@@ -41,7 +42,11 @@ export class Payment extends React.Component<PaymentProps, PaymentState> {
   };
 
   render(): JSX.Element {
-    const { addSelection, selectedPaymentType } = this.props;
+    const {
+      addSelection,
+      selectedPaymentType,
+      constructBip70Payload
+    } = this.props;
     if (selectedPaymentType === null) {
       return null;
     }
@@ -59,6 +64,7 @@ export class Payment extends React.Component<PaymentProps, PaymentState> {
                 token={x}
                 active={isSelected}
                 addSelection={addSelection}
+                constructBip70Payload={constructBip70Payload}
               />
             );
           })}

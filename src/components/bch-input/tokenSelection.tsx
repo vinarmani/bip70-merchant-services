@@ -12,6 +12,7 @@ export interface TokenSelectionProps {
   };
   active?: boolean;
   addSelection: Function;
+  constructBip70Payload: Function;
 }
 
 interface TokenSelectionState {
@@ -29,13 +30,14 @@ export class TokenSelection extends React.Component<
   componentDidMount = () => {};
 
   render(): JSX.Element {
-    const { token, addSelection, active } = this.props;
+    const { token, addSelection, active, constructBip70Payload } = this.props;
 
     return (
       <div
         className={`token ${active ? "selected" : ""}`}
-        onClick={() => {
-          addSelection(token);
+        onClick={async () => {
+          await addSelection(token);
+          constructBip70Payload();
         }}
       >
         <div className="token-image">
