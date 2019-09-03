@@ -180,14 +180,17 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
 
   getSpiceAmount = async (fiatValue: number) => {
     const {
-      data: { last_price }
+      data: { price }
     }: AxiosResponse = await axios.get(
       `https://api.cryptophyl.com/products/SPICE-BCH/ticker`
     );
 
     const bchPrice = await this.getBCHPrice();
-    const bchCost = fiatValue / bchPrice;
-    const spiceAmount = bchCost / last_price;
+
+    const bchCost = fiatValue / parseFloat(bchPrice);
+
+    const spiceAmount = bchCost / price;
+
     return parseFloat(spiceAmount.toFixed(8));
   };
 
