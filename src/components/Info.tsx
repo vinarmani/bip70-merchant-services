@@ -18,8 +18,6 @@ export class Info extends React.Component<InfoProps, any> {
   }
 
   render(): JSX.Element {
-    let needHelp: any
-
     let needHelp: any;
     if (this.props.status === "open") {
       needHelp = (

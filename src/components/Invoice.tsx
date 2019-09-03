@@ -4,6 +4,7 @@ import axios from "axios";
 import { AxiosResponse } from "axios";
 import { Link } from "react-router-dom";
 import BchInput from "./bch-input";
+import store from "store";
 
 export interface InvoiceProps {
   location: object;
@@ -36,10 +37,16 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
   };
 
   componentDidMount = () => {
-    this.getMerchantInfo("apikey");
+    this.getMerchantInfo();
   };
 
-  getMerchantInfo = async (apiKey: string) => {
+  getMerchantInfo = async () => {
+    const merchantInfo = store.get("merchant");
+    let apiKey: string;
+    if (merchantInfo !== undefined) {
+      apiKey = merchantInfo.apiKey;
+    }
+
     const resp = await this.mockApiCall(apiKey);
     this.setState({ merchant: resp });
   };

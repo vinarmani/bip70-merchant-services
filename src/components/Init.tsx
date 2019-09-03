@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import store from "store";
 
 const cryptoSVG = require("../crypto.svg");
 
@@ -20,6 +21,8 @@ export class Init extends React.Component<InitProps, InitState> {
     errorMsg: "",
     response: {}
   };
+
+  componentDidMount = () => {};
 
   markValid() {
     this.setState({ isValid: true });
@@ -55,9 +58,29 @@ export class Init extends React.Component<InitProps, InitState> {
     if (!mockResponse.success) {
       return this.setState({ errorMsg: "invalid id" });
     }
+
+    this.saveMerchantID(mockResponse);
+  };
+
+  saveMerchantID = (response: object) => {
+    store.set("merchant", response);
   };
 
   render(): JSX.Element {
+    const merchantInfo = store.get("merchant");
+    const hasMerchantSaved = merchantInfo !== undefined;
+
+    if (hasMerchantSaved) {
+      return (
+        <Redirect
+          push
+          to={{
+            pathname: "/invoice"
+          }}
+        />
+      );
+    }
+
     const { isValid, id, response, errorMsg } = this.state;
     return (
       <div className="wrapper">

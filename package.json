@@ -46,6 +46,7 @@
     "react-tooltip": "^3.10.0",
     "reactstrap": "^7.0.2",
     "slp-sdk": "^4.7.0",
+    "store": "^2.0.12",
     "websocket": "^1.0.29"
   },
   "prettier": {
