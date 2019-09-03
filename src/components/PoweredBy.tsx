@@ -1,12 +1,13 @@
-import * as React from "react"
-import Logo from "../logo.png"
+import * as React from "react";
+
+const Logo = require("../logo.png");
 
 export interface PoweredByProps {}
 
 export class PoweredBy extends React.Component<PoweredByProps, any> {
   constructor(props: PoweredByProps, context: any) {
-    super(props, context)
-    this.state = {}
+    super(props, context);
+    this.state = {};
   }
 
   render(): JSX.Element {
@@ -22,6 +23,6 @@ export class PoweredBy extends React.Component<PoweredByProps, any> {
           </a>
         </p>
       </div>
-    )
+    );
   }
 }

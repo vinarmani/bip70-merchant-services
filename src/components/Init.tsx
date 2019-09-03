@@ -1,7 +1,8 @@
 import * as React from "react";
 
 import { Link } from "react-router-dom";
-import cryptoSVG from "../img/crypto.svg";
+
+const cryptoSVG = require("../crypto.svg");
 
 export interface InitProps {}
 

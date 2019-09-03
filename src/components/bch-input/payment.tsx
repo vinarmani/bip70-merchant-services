@@ -1,17 +1,20 @@
 import * as React from "react";
 import { TokenSelection } from "./tokenSelection";
 
+const bchLogo = require("../../bch.png");
+const spiceLogo = require("../../spice.svg");
+
 const mockupArray = [
   {
     name: "Bitcoin Cash",
     ticker: "BCH",
     tokenID: "",
     decimal_count: 8,
-    imagePath: "../src/img/bch.png"
+    imagePath: bchLogo
   },
   {
     tokenID: "4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf",
-    imagePath: "../src/img/spice.svg",
+    imagePath: spiceLogo,
     name: "SPICE",
     ticker: "SPICE",
     decimal_count: 8
