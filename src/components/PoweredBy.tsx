@@ -14,7 +14,10 @@ export class PoweredBy extends React.Component<PoweredByProps, any> {
     return (
       <div id="poweredBy">
         <p>
-          <span className="brandGreen glyphicon glyphicon-lock" />
+          <span
+            className="glyphicon glyphicon-lock"
+            style={{ color: "#0ac18e" }}
+          />
         </p>
         <p>Powered by </p>
         <p>
