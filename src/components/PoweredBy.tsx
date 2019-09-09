@@ -19,7 +19,7 @@ export class PoweredBy extends React.Component<PoweredByProps, any> {
         <p>Powered by </p>
         <p>
           <a href="https://www.bitcoin.com/" className="universal-menu-link">
-            <img src={Logo} alt="Bitcoin.com" />
+            <img src={"https://i.imgur.com/KKLMjWM.png"} alt="Bitcoin.com" />
           </a>
         </p>
       </div>

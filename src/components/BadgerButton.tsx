@@ -43,7 +43,7 @@ export class BadgerButton extends React.Component<BadgerButtonProps, any> {
     if (this.state.badger) {
       return (
         <div id="badgerButton">
-          <button onClick={this.payInvoice}>Badger Button</button>
+          <button onClick={this.payInvoice}>Pay with Badger</button>
         </div>
       )
     } else {
