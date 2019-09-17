@@ -12,13 +12,13 @@ const mockupArray = [
     decimal_count: 8,
     imagePath: bchLogo
   },
-  {
-    tokenID: "4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf",
-    imagePath: spiceLogo,
-    name: "SPICE",
-    ticker: "SPICE",
-    decimal_count: 8
-  }
+//  {
+//    tokenID: "4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf",
+//    imagePath: spiceLogo,
+//    name: "SPICE",
+//    ticker: "SPICE",
+//    decimal_count: 8
+//  }
 ];
 
 export interface PaymentProps {

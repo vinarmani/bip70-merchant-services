@@ -80,9 +80,8 @@ export class Init extends React.Component<InitProps, InitState> {
   render(): JSX.Element {
     const merchantInfo = store.get("merchant");
     const hasMerchantSaved = merchantInfo !== undefined;
-    
     if (hasMerchantSaved) {
-      console.log('redirecting')
+      console.log("redirecting")
       return (
         <Redirect
           push

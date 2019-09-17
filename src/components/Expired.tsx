@@ -1,4 +1,5 @@
-import * as React from "react"
+import * as React from "react";
+import { Link } from "react-router-dom";;
 
 export interface ExpiredProps {
   paymentId: string
@@ -26,9 +27,9 @@ export class Expired extends React.Component<ExpiredProps, any> {
           {this.props.paymentId}
         </p>
         <p>
-          <a href="https://developer.bitcoin.com" target="_blank">
-            Try Again
-          </a>
+        <div className="merchant-proceed active">
+          <Link to="/">Try Again</Link>
+        </div>
         </p>
       </div>
     )

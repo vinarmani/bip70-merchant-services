@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { BadgerButton } from "./BadgerButton";
 import { PoweredBy } from "./PoweredBy";
 import { Card } from "./Card";
@@ -164,7 +165,9 @@ export class BIP70 extends React.Component<BIP70Props, any> {
           expires={this.state.expires}
           qr={this.state.qr}
         />
-        {badgerButton}
+        <div className="merchant-proceed active">
+          <Link to="/">Cancel</Link>
+        </div>
         <PoweredBy />
       </div>
     );

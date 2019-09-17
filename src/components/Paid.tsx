@@ -1,4 +1,5 @@
-import * as React from "react"
+import * as React from "react";
+import { Link } from "react-router-dom";
 
 export interface PaidProps {}
 
@@ -17,9 +18,9 @@ export class Paid extends React.Component<PaidProps, any> {
         <p className="cardTitle">Success!</p>
         <p className="cardText">You have fully paid the invoice.</p>
         <p>
-          <a href="https://www.bitcoin.com/" className="universal-menu-link">
-            All Done
-          </a>
+          <div className="merchant-proceed active">
+          <Link to="/">All Done</Link>
+        </div>
         </p>
       </div>
     )

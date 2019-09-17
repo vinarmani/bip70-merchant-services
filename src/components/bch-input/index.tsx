@@ -15,6 +15,7 @@ export interface BchInputProps {
   markValid: Function;
   markInvalid: Function;
   updateBip70Payload: Function;
+  apiKey: string;
 }
 
 interface BchInputState {
@@ -211,9 +212,11 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
       const spiceAmount = await this.getSpiceAmount(floatVal);
 
       const slpTxRequest: {
+        apiKey: string;
         token_id: string;
         slp_outputs: { address: string; amount: number }[];
       } = {
+        apiKey: this.props.apiKey,
         token_id: tokenID,
         slp_outputs: [
           { address: this.props.destinationAddress, amount: spiceAmount }
@@ -222,6 +225,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
       return updateBip70Payload(slpTxRequest);
     } else {
       const bchTxRequest: {
+        apiKey: string;
         outputs: {
           script?: string;
           amount?: number;
@@ -232,6 +236,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
         fiat?: string;
         fiatRate?: number;
       } = {
+        apiKey: this.props.apiKey,
         fiat: currency,
         outputs: [
           // {

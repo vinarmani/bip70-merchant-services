@@ -1,0 +1,932 @@
+[33mcommit 54507dfd438d2bb81c835449c51c2e9403ba0322[m[33m ([m[1;36mHEAD -> [m[1;32mintegration[m[33m)[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Mon Sep 16 17:47:28 2019 -0700
+
+    Pull live merchant data via API key
+
+[33mcommit f38537ca5b5503330f03e89ec889b5d6d845aec5[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 9 12:48:19 2019 -0700
+
+    styling cont
+
+[33mcommit 28c1ee0b261750ee21cb65cfc32136eddb98ee0a[m
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 9 12:39:28 2019 -0700
+
+    minor styling
+
+[33mcommit 3ce2c5469fadf3da55e4482ccf0803c82c84fdff[m[33m ([m[1;31morigin/RN-branch[m[33m)[m
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 2 17:46:45 2019 -0700
+
+    update spice response
+
+[33mcommit b0e98d2e23ed541c75de6fcbfd21d25b2683fc89[m
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 2 17:39:05 2019 -0700
+
+    save to localstorage
+
+[33mcommit 2f35bfc95e4b1b6a62a9d4f61cc7c693fc548a91[m
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 2 17:11:11 2019 -0700
+
+    Auto stash before merge of "RN-branch" and "Bitcoin-com/master"
+    
+    and additional styling
+
+[33mcommit f1486a4b456a205b05f454743cf65d3578fba47a[m
+Merge: 512aa24 98986d4
+Author: paool <paoolkim@gmail.com>
+Date:   Mon Sep 2 17:09:51 2019 -0700
+
+    Merge remote-tracking branch 'Bitcoin-com/master' into RN-branch
+
+[33mcommit 98986d4cffeceeeff6ae3e57e4d2c13a9b446ec2[m
+Merge: bdbc795 6762190
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 29 15:29:38 2019 -0700
+
+    Merge pull request #7 from vinarmani/master
+    
+    Merchant Name and Verified Checkmark
+
+[33mcommit 67621904d0d840e6547d41c95931fd2c13be0bd8[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Thu Aug 29 22:26:03 2019 +0000
+
+    Changes to the merchant endpoint
+
+[33mcommit 512aa2415d55ac113377f9642e7d5256d8cafd29[m
+Author: paool <paoolkim@gmail.com>
+Date:   Sun Aug 25 22:24:55 2019 -0700
+
+    dev port 80
+
+[33mcommit 6006c8e308abd153a3844334801608119568afc1[m
+Author: paool <paoolkim@gmail.com>
+Date:   Sun Aug 25 22:20:17 2019 -0700
+
+    port 80
+
+[33mcommit effee839add6be92597bc640a75e68fac003e799[m
+Author: paool <paoolkim@gmail.com>
+Date:   Sun Aug 25 22:09:46 2019 -0700
+
+    update props on payment selection
+
+[33mcommit 2653791515c2aa90402ac94558f00e0fc7d85663[m
+Author: paool <paoolkim@gmail.com>
+Date:   Sat Aug 24 15:00:04 2019 -0700
+
+    invoice creation working
+    
+    bch and spice.
+
+[33mcommit 44ef2f01467020485303b8b9244ba269a7821dc0[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 22:59:44 2019 -0700
+
+    add token payment selection
+
+[33mcommit 4ed63b2e248751c0433b2935c001a200d8367888[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 22:58:50 2019 -0700
+
+    stlying
+
+[33mcommit ad47e25a788103663111142a7a4b3033bd1661cb[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 16:24:04 2019 -0700
+
+    invoice page
+
+[33mcommit 9e777d2755bfdc455a48c096b6545c72d9758f1f[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 16:23:49 2019 -0700
+
+    styling
+
+[33mcommit 50a03f0f940903e62cbee740671d19881072cfe6[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 16:23:40 2019 -0700
+
+    bch-input component
+
+[33mcommit 2454e1d0b54527879e0769f3776b94b52dabbfb0[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 16:19:19 2019 -0700
+
+    assets
+
+[33mcommit 997939e83caa7650a04870600c45bcaed74bf3a0[m
+Author: paool <paoolkim@gmail.com>
+Date:   Fri Aug 23 15:34:27 2019 -0700
+
+    add bignumber
+
+[33mcommit 115039a9c61faa6247f1d2e4a308dacba715d923[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 20:32:26 2019 -0700
+
+    linting
+
+[33mcommit ed04cd0b57c05b0db45c82f5c4960441fb55b223[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 16:16:53 2019 -0700
+
+    add types
+
+[33mcommit 36aecf81d7ab452ef6f32fdf87cb7185daddd4e7[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 15:46:04 2019 -0700
+
+    style init page
+
+[33mcommit fa92fc1172120a05f00fa77f721002ecccfeaa1a[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 15:03:00 2019 -0700
+
+    fix webpack dev
+
+[33mcommit cbce44465d37bacfb8db9dc3a91ad4324c06e5bb[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 15:02:47 2019 -0700
+
+    set default route
+
+[33mcommit c34c2f5f9f1489ad84e64a24e36b9a5407ce14fb[m
+Author: paool <paoolkim@gmail.com>
+Date:   Thu Aug 22 15:02:34 2019 -0700
+
+    add express
+
+[33mcommit 9a14a5098d9eba130a6fd5d04a584557e5b5bd0c[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Thu Aug 22 12:16:35 2019 -0700
+
+    checkmark only render on confirmed
+
+[33mcommit 69a363472bd0f8b86a7ceaf769e7592024eccc8c[m
+Author: Unknown <paoolkim@gmail.com>
+Date:   Wed Aug 21 15:22:03 2019 -0700
+
+    add router
+    
+    include additional routes
+
+[33mcommit acb48615c5a386564e052045b7e30079a25ac3c2[m
+Author: Unknown <paoolkim@gmail.com>
+Date:   Wed Aug 21 15:21:39 2019 -0700
+
+    add react-router dependency
+
+[33mcommit f55957db12284976286e6301cdcccf0da396dac9[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Tue Aug 20 19:13:30 2019 -0700
+
+    verified merchant checkmark
+
+[33mcommit 20017c64eacf2bad70653d64743ba8d3196c3018[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Tue Aug 20 11:56:52 2019 -0700
+
+    Merchant Name Pay To:
+
+[33mcommit bdbc7950786a02c7ad7d1a334bc333f5539c7a56[m
+Merge: 01e5561 442db17
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Mon Aug 19 16:47:41 2019 -0700
+
+    Merge pull request #5 from vinarmani/master
+    
+    Use Merchant image instead of merchantId
+
+[33mcommit 442db178cc01440804ff52802c078746cc2b47d8[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Mon Aug 19 16:36:50 2019 -0700
+
+    Badger Button live
+
+[33mcommit fc78dfc46848231db96d9559b2bb884edd5955eb[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Mon Aug 19 15:51:30 2019 -0700
+
+    URI fixes
+
+[33mcommit d255cdae9dce64a183a307d96eeda430cd8c540b[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Mon Aug 19 13:37:59 2019 -0700
+
+    Copy valid URI
+
+[33mcommit 72aa677d09cf3fe6af9e58dc07df7bf7359f8977[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Mon Aug 19 13:12:37 2019 -0700
+
+    css changes
+
+[33mcommit 4cc838be60aa4a5eb83d40ff3461ea17d8a8281e[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 17:24:52 2019 -0700
+
+    merchant image
+
+[33mcommit a98826f4d1b631fe39d3a9fc837f786a96c39bee[m
+Merge: 48ac610 c4a148b
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 17:15:20 2019 -0700
+
+    Merge branch 'master' of https://github.com/vinarmani/bip70-merchant-services
+
+[33mcommit 48ac61077b58f8acdcf5faf469f3dc9188288cc5[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 17:14:51 2019 -0700
+
+    double quotes
+
+[33mcommit c4a148b7a73c270c2f307c2254358ab1fdb0ca9f[m
+Merge: ee800ad 01e5561
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Fri Aug 16 17:08:08 2019 -0700
+
+    Merge pull request #10 from Bitcoin-com/master
+    
+    Merge upstream
+
+[33mcommit 01e5561376e1e0febc03f5f2b60b7cc9e1e22bf9[m
+Merge: 5025aa7 3708deb
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 16 16:53:37 2019 -0700
+
+    Merge pull request #4 from vinarmani/websocket
+    
+    Added websocket ingest
+
+[33mcommit 5025aa7757c0af58bab8466d7de14ab8f52ccacb[m
+Merge: d33f2f4 ee800ad
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 16 16:51:08 2019 -0700
+
+    Merge pull request #3 from vinarmani/master
+    
+    Removed unnecessary lines in timer
+
+[33mcommit 3708deba2f5cfdd7e29bfcea412dec921f8a5f5f[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 16:17:07 2019 -0700
+
+    Pull id from path name
+
+[33mcommit 05fa6295460b9dde2d573fa81b7c954becf6ecde[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 14:42:51 2019 -0700
+
+    Get paymentId from url parameter
+
+[33mcommit 9bbb655f0967f90425b297334755565bf3188f48[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 12:46:58 2019 -0700
+
+    Websocket connection
+
+[33mcommit ee800ad4c58351d54d368c58db0d722f9bfbaa97[m
+Merge: d662e2f d33f2f4
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Fri Aug 16 11:55:19 2019 -0700
+
+    removed unnecessary timer code
+
+[33mcommit d33f2f471e8f4b2e155867552efc1edff66e6efe[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 15:37:25 2019 -0700
+
+    Limit Popover.
+
+[33mcommit bf204d1911581f0ced7a35215ac79904bb779930[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 13:46:20 2019 -0700
+
+    Pass in price.
+
+[33mcommit 05c7a54e65c8ac2593cae9b931c34f0ed7674c49[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 13:44:32 2019 -0700
+
+    Replace countdown clock.
+
+[33mcommit 23f135b4a67acdaec17fb3c6a626bc7e667abde7[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 12:37:17 2019 -0700
+
+    Details component.
+
+[33mcommit 01173180ad794bf1d6b6b39649a94dd6bdaab0c6[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 12:00:43 2019 -0700
+
+    Cleanup and pass amount/symbol to details.
+
+[33mcommit 31824adca3734582144f02f61bf053ff77dfea0a[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 11:49:02 2019 -0700
+
+    Pass email and merchant name to populate need help email.
+
+[33mcommit cdc0ea9c069e942047b47df76ddd205f6a7cf038[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Thu Aug 15 11:09:54 2019 -0700
+
+    Copy to clipboard, sample data and need help mailto link.
+
+[33mcommit d92da98769ce295d8f1828c6dfc7e23e54023c24[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 19:32:00 2019 -0700
+
+    Timer countdown.
+
+[33mcommit d662e2f8e678045cca588dbe06ba92b1f54f7800[m
+Merge: 72793b0 2100c2b
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Wed Aug 14 16:03:31 2019 -0700
+
+    Merge branch 'master' of https://github.com/vinarmani/bip70-merchant-services
+
+[33mcommit 72793b050ef25c55c361c4b55ba3be5d17a91eb0[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Wed Aug 14 16:02:44 2019 -0700
+
+    Fixed time
+
+[33mcommit 2100c2b9d84fb3cc07b71d71c102989dd4a3fcdf[m
+Merge: eb927a0 6a6f1f7
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 15:53:20 2019 -0700
+
+    Merge pull request #9 from Bitcoin-com/master
+
+[33mcommit 6a6f1f7146ae4dc770e06fcfc97ebda87df7b709[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 15:45:23 2019 -0700
+
+    Add another spinner for QR.
+
+[33mcommit 55ee833a6cfc1401781a1acc3bb2b8a74e6df40f[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 15:42:15 2019 -0700
+
+    set state.
+
+[33mcommit 9ec13c15d39f0584745e2f23de7831e738d1a04e[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 15:41:26 2019 -0700
+
+    Request new invioce. Add spinner.
+
+[33mcommit eb927a017e8f8e3dd0021ee16cc8a10f9b4cabed[m
+Merge: 53fbda4 2c2b926
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 15:23:45 2019 -0700
+
+    Merge pull request #8 from Bitcoin-com/master
+    
+    Up to date
+
+[33mcommit 2c2b92602154f2a7795ab506c8a5f9c090c87ee6[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 14:44:50 2019 -0700
+
+    Add types to render.
+
+[33mcommit a33d9402e6c4be7cf5114591da99e18b51b5a9e4[m
+Merge: 6a33d48 53fbda4
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 14:33:52 2019 -0700
+
+    Merge pull request #2 from vinarmani/master
+    
+    Use live payment requests
+
+[33mcommit 53fbda46b9fcbea348e22281e8a33a777e3e577e[m
+Merge: f13a182 f1ee02b
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 13:22:19 2019 -0700
+
+    Merge pull request #7 from vinarmani/update
+    
+    Merge to master
+
+[33mcommit f1ee02b84e0136f8b1ee606130a72953e4ec39dd[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Wed Aug 14 13:21:12 2019 -0700
+
+    Use timer in open card
+
+[33mcommit 35ef4dfee46a22e164d46225d1e23ef6ec2d6e25[m
+Merge: d0866fd f13a182
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 13:03:11 2019 -0700
+
+    Merge pull request #6 from vinarmani/master
+    
+    Merge changes
+
+[33mcommit f13a182b23018a9a3a7c3a21139a0af65a359d81[m
+Merge: ef89a3b d0866fd
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 13:02:50 2019 -0700
+
+    Merge branch 'update' into master
+
+[33mcommit ef89a3bf9cc9ed0f72cea0c2c006e9bb9924d04c[m
+Merge: 6a54516 6a33d48
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 12:52:30 2019 -0700
+
+    Merge pull request #5 from Bitcoin-com/master
+    
+    Merge from Bitcoin.com
+
+[33mcommit d0866fd52031007a328179532178a5a29f988169[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Wed Aug 14 12:50:47 2019 -0700
+
+    Pull actual payment request metadata, qr, ttl countdown
+
+[33mcommit 6a33d4823aab76c297c520a9313c87532b656d43[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 11:48:20 2019 -0700
+
+    Calculate time.
+
+[33mcommit 898e2e9d89bc4c1f38f53a3411ed690dab5502d3[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 11:18:37 2019 -0700
+
+    Flat design.
+
+[33mcommit 9af260999ef7574153470741e8059cc35f098709[m
+Merge: bcd6b85 6a54516
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 11:13:57 2019 -0700
+
+    Merge pull request #4 from vinarmani/master
+    
+    Merge from master
+
+[33mcommit 6a54516f259fdc0b69bcce8139488a6a9fe451a3[m
+Merge: d28a6f6 a1281d2
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 11:12:45 2019 -0700
+
+    Merge pull request #3 from Bitcoin-com/master
+    
+    Copy to clipboard.
+
+[33mcommit a1281d2bad48cdf750d4f04860be0629ea39a78e[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 09:39:24 2019 -0700
+
+    Copy to clipboard.
+
+[33mcommit bcd6b859e972627b77348b70264ea289f8c3ac06[m
+Merge: 542f4dc d28a6f6
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 07:43:30 2019 -0700
+
+    Merge pull request #2 from vinarmani/master
+    
+    merge
+
+[33mcommit d28a6f68fde5ceb5cad5886576f8a0426aa3568d[m
+Merge: cee65b0 d7e80cb
+Author: Vin Armani <33237395+vinarmani@users.noreply.github.com>
+Date:   Wed Aug 14 07:42:34 2019 -0700
+
+    Merge pull request #1 from Bitcoin-com/master
+    
+    Merge
+
+[33mcommit d7e80cbd6f8316588e8dedf03bbd65ddd5f4ca3b[m
+Merge: 629f750 542f4dc
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 14 07:41:54 2019 -0700
+
+    Merge pull request #1 from vinarmani/update
+    
+    Display updates
+
+[33mcommit 629f750b1e1d57a0e106d20e3e3d179856098509[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 21:02:57 2019 -0700
+
+    Time limit popover.
+
+[33mcommit cd900d4d085665bece7ad50c4be0746205b21a60[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 20:57:52 2019 -0700
+
+    Toggle status.
+
+[33mcommit d0b74b2b666f6635c9c21d263f7ee33dbb37b821[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 20:54:34 2019 -0700
+
+    Details body styles and content.
+
+[33mcommit 916f2dbe20159dc640c0edf41adb7df517c9f106[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 20:07:00 2019 -0700
+
+    BCH Price index.
+
+[33mcommit 2e2d7137864f2cd6f7722e09c7f049c291110986[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 19:57:27 2019 -0700
+
+    Details component.
+
+[33mcommit 000b844938cef5eec12265a6b19e4d57aeeb8606[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 19:42:40 2019 -0700
+
+    Copied component.
+
+[33mcommit 84e3703adf07aa2ee9bcff62c123eb33335c93bb[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 18:42:14 2019 -0700
+
+    README
+
+[33mcommit f4c634d481101c41e10a0cb7c8189c12c78610e9[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 16:39:36 2019 -0700
+
+    README.
+
+[33mcommit 542f4dce2203a459c8947084f8e93a9c97cd1d44[m
+Author: Vin Armani <vin@vinarmani.com>
+Date:   Tue Aug 13 15:19:20 2019 -0700
+
+    Display BCH and SLP in decimal format not satoshis
+
+[33mcommit cee65b0c136afe1e734de621590f702d55bf07ad[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 13:44:11 2019 -0700
+
+    Fetch symbol.
+
+[33mcommit 980a1c81fcef2bdeb2e3168322e212800a461433[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 12:45:56 2019 -0700
+
+    Calculate amount.
+
+[33mcommit 2ec74890933c71747d1a9a4ee7dec22a6a9dedaa[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 12:27:30 2019 -0700
+
+    Cleanup.
+
+[33mcommit f06328ac8c3cf818eb91cae86422d2215af8509b[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 12:25:19 2019 -0700
+
+    Create sample data files.
+
+[33mcommit 6a2af5ed1e5f858e61b5167c346f6eb012752062[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 12:17:47 2019 -0700
+
+    Create less dir.
+
+[33mcommit 8b3eb0d265291c1f388198538f9fd158ca563f60[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 12:14:31 2019 -0700
+
+    Breaking out in to components.
+
+[33mcommit dfe364e36f2752b6ab9bd74f78a5eee470425011[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 11:51:12 2019 -0700
+
+    PoweredBy component.
+
+[33mcommit ca0dd783fc8110d33d962f6b5e0ebf037bf47c1f[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 11:34:34 2019 -0700
+
+    Timer countdown component
+
+[33mcommit aec240aeab2c6b9fff3e4b5ad9c1390dd0934095[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 11:17:53 2019 -0700
+
+    Details and paymentUrls popovers
+
+[33mcommit 49fa3bed909673cb2c63e6b712ed2d0bb80fa3d5[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 09:16:54 2019 -0700
+
+    Details card stub.
+
+[33mcommit b14a10fdaa359ce915f93614e7dc1bd40e4f1a91[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 08:45:32 2019 -0700
+
+    Copied payment URL card.
+
+[33mcommit 6f2710425472d7103dba4b5f9b4158f821588449[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 08:30:09 2019 -0700
+
+    Open Card styles.
+
+[33mcommit 2d0ef79f023bbd9d6507ff626a5b1e672c398def[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Tue Aug 13 07:58:48 2019 -0700
+
+    Tooltips.
+
+[33mcommit da360538633e8bf56edb7ccd1f1cea1a6039e1ec[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Mon Aug 12 17:59:21 2019 -0700
+
+    Add qr code, fix title in metadata, add 'paid' state.
+
+[33mcommit 064f680cec499f802bffb054b94274f02c7a0fa4[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Mon Aug 12 17:37:57 2019 -0700
+
+    Add logo .png. Pass id in as prop.
+
+[33mcommit 3973c2ae511856cf1450756afe259c948ee23c1a[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Mon Aug 12 17:12:35 2019 -0700
+
+    Break markup in to components
+
+[33mcommit 3907c26c0f388c6278c2aec5e9e00e6dadac84e1[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Sat Aug 10 00:50:31 2019 -0700
+
+    CSS.
+
+[33mcommit 52bd79333a73d3ee642cea6269d53a6341aaca69[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 23:50:38 2019 -0700
+
+    Conditionally show Badger Button.
+
+[33mcommit 540a3fcb9f943d00e83a10d5c5d30bdd044931f2[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 21:25:23 2019 -0700
+
+    Brand Green.
+
+[33mcommit 481957f3fba9f3cd755c85e7ed216a58a82bb0df[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 21:22:49 2019 -0700
+
+    Building out different states.
+
+[33mcommit cae3f66164d4d39d43667d14419d732eb7f220b6[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 20:59:26 2019 -0700
+
+    Layout for expired.
+
+[33mcommit f1bee7121f6983ebcf9b5efbeea95c07c321807a[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 20:41:14 2019 -0700
+
+    More markup.
+
+[33mcommit 562764cb73b2262200af85cb70624ddcee376d9c[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 19:13:49 2019 -0700
+
+    Conditionally render need help
+
+[33mcommit 734c6ca0a4a57f15ad159701bf57acad486dd6a9[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Fri Aug 9 19:00:49 2019 -0700
+
+    Building out the UI.
+
+[33mcommit e1bede5833200fbc5d102d69506ec19a577ab36a[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 7 22:51:56 2019 -0700
+
+    Hard code state.
+
+[33mcommit 08999eb144c00ac97142e9511f7af5393a7628d2[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 7 22:41:57 2019 -0700
+
+    Start adding gui components.
+
+[33mcommit 57cfaae9a7ce3638c91c2578b099017bec384137[m
+Author: Gabriel Cardona <gabriel@bitcoin.com>
+Date:   Wed Aug 7 21:55:17 2019 -0700
+
+    Update package name.
+
+[33mcommit c15b3af09faa3a85e8b7679474527c883f3765db[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Thu Mar 30 10:58:34 2017 +0200
+
+    Update README.md
+
+[33mcommit dc81e1a2e41016cb8bd009deea7e16dd7474c71b[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:54:43 2017 +0200
+
+    code comments
+
+[33mcommit 25b0796ee4cd017947feab616e628415c6f7d56c[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:24:26 2017 +0200
+
+    updated readme
+
+[33mcommit 9c25a28c9f7ba2bb03fe91fddfda5a23bda14cc9[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:08:43 2017 +0200
+
+    fixed props in Hello.tsx
+
+[33mcommit 7d9f85c41acadf29fc60605ba7d399ca887d2545[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:08:21 2017 +0200
+
+    fixed props in Hello.tsx
+
+[33mcommit d1a66da3dd91cac726d67a9781ce3f332a6de989[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:02:49 2017 +0200
+
+    updated descriptions
+
+[33mcommit dc2314c6da381954eef06f2405ac2caf0ccf20a9[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 23:01:05 2017 +0200
+
+    extract generated css to separate file
+
+[33mcommit 989ef5ee00983c26e737bb9075bc19da34ec22fe[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 22:19:14 2017 +0200
+
+    url-loader optimization
+
+[33mcommit 5817cd1cea1f867b0f1f6ab099db591a4d6e74bd[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 22:18:56 2017 +0200
+
+    updated readme
+
+[33mcommit 938a0bff2b4b5fa5608b10d7f5a5ee1ccab7948d[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 22:12:16 2017 +0200
+
+    fixed readme
+
+[33mcommit b4c6404755bfcf10db7d21e74c2778426e15bed1[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Wed Mar 29 22:05:10 2017 +0200
+
+    fixed error on loading less
+
+[33mcommit 1c56470c3c6c59a3fb3d604067522a4819865fe3[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 19:53:30 2017 +0200
+
+    loader for resources (doesn't work)
+
+[33mcommit 94ef696d2f45061f50aa7f6ede818de93e6eff49[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 18:04:11 2017 +0200
+
+    small improvements
+
+[33mcommit 34177b9531e2be053a80be6e89a8f095019dd697[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 17:51:58 2017 +0200
+
+    small improvements
+
+[33mcommit 3986bc9c41cb11c288757ac666ef355e9b6785de[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 17:49:42 2017 +0200
+
+    fixed error in dev config
+
+[33mcommit 1d159ec635edf636be3dd62374b7c911418a400c[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 17:45:29 2017 +0200
+
+    small improvements
+
+[33mcommit d8fe1201b8ba38339c39914e39382731406febab[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Tue Mar 28 17:16:59 2017 +0200
+
+    fixed missing react dependencies in build; fixed error in test execution (disable chunk plugin in test)
+
+[33mcommit 4b3023e5b90c7bc39ecd18fc1588d1d0903c865e[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Tue Mar 28 00:31:04 2017 +0200
+
+    prepared config
+
+[33mcommit b7cd4491f91760f708a8c0372dd80409b91c1997[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Mon Mar 27 23:07:44 2017 +0200
+
+    prepared config
+
+[33mcommit fd436e2f2fd4e1c25dd00ae215ef3a3822bfc742[m
+Author: stephan <stephan.zerhusen@gmail.com>
+Date:   Mon Mar 27 22:29:11 2017 +0200
+
+    prepared package.json and wp configs
+
+[33mcommit c0b7f57422904134e0cb11b7c77910d445f4416e[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Mon Oct 17 15:01:34 2016 +0200
+
+    fixed issue at hot reloading tests
+
+[33mcommit 9935d6791d5aef012335e1e6fca6bab1ab7725d7[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Mon Oct 17 13:45:57 2016 +0200
+
+    Update README.md
+
+[33mcommit c0644eae8fefd77a235e40071a8e2d087d232dcf[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Mon Oct 17 13:21:06 2016 +0200
+
+    Update README.md
+
+[33mcommit 149eb4e2b4342710e2a0acf8a6a8bc867e3a8d41[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Mon Oct 17 09:40:39 2016 +0200
+
+    smaller improvements
+
+[33mcommit ca8910cdf03ef8830927047c136ab794394e7ed7[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Mon Oct 17 00:49:40 2016 +0200
+
+    added test
+
+[33mcommit 5968887013ecacf0f1ed3efdd777caaa4cf3f15c[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Mon Oct 17 00:49:21 2016 +0200
+
+    added test
+
+[33mcommit 265ce98698a1810edd83c933a7caf36f9fa9d48f[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Sun Oct 16 18:40:27 2016 +0200
+
+    smaller improvements
+
+[33mcommit 82b5d8ff312883b128bfea94f9c59e2412dadb22[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Sun Oct 16 18:34:08 2016 +0200
+
+    Update README.md
+
+[33mcommit 7ab33c198036aff5339d798335bece3cb89d5f7f[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Sun Oct 16 18:32:10 2016 +0200
+
+    Update README.md
+
+[33mcommit 027f3d130ff4835b037984fa7432074791e6cb05[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Sun Oct 16 18:23:23 2016 +0200
+
+    smaller improvements
+
+[33mcommit d1566db1e0f7fe1dd38a646ab838fcc1219b6281[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Sun Oct 16 18:17:19 2016 +0200
+
+    smaller improvements
+
+[33mcommit e2f33e6bcebbb0fa6c21bf5f768558bac68085f9[m
+Author: szerhusenBC <qVp6ntee>
+Date:   Sun Oct 16 18:10:28 2016 +0200
+
+    initial check in
+
+[33mcommit 92f49360feb1b8cd3944e94be74d38b1ab0bc217[m
+Author: Stephan Zerhusen <s.zerhusen@byte-connect.de>
+Date:   Sun Oct 16 17:58:47 2016 +0200
+
+    Initial commit

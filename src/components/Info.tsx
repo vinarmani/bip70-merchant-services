@@ -1,14 +1,15 @@
 import * as React from "react";
 import { NeedHelp } from "./NeedHelp";
+import VerifiedCheck from "../verified-account-48.png";
 
 export interface InfoProps {
   status: string;
   memo: string;
-  merchantId: string;
   email: string;
   merchant: string;
   paymentId: string;
   image: string;
+  merchantVerified: Boolean;
 }
 
 export class Info extends React.Component<InfoProps, any> {
@@ -34,7 +35,7 @@ export class Info extends React.Component<InfoProps, any> {
     return (
       <div className="info">
         <h1>{this.props.memo}</h1>
-        <img src={this.props.image} />
+        {name}
         {needHelp}
       </div>
     );

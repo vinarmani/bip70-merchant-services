@@ -21,6 +21,7 @@ interface InvoiceState {
   };
   bip70Payload: object;
   isValid: boolean;
+  apiKey: string;
 }
 
 export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
@@ -33,7 +34,8 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
       companyName: ""
     },
     bip70Payload: {},
-    isValid: false
+    isValid: false,
+    apiKey: ""
   };
 
   componentDidMount = () => {
@@ -45,15 +47,16 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
     let apiKey: string;
     if (merchantInfo !== undefined) {
       apiKey = merchantInfo.apiKey;
+      this.setState({apiKey : apiKey});
     }
 
-   //const resp = await this.mockApiCall(apiKey);
+   // const resp = await this.mockApiCall(apiKey);
    const resp = {
     currency: "USD",
     destinationAddress: merchantInfo.settings.address,
     companyName: merchantInfo.name
   }
-  console.log('resp', resp)
+  console.log("resp", resp)
     this.setState({ merchant: resp });
   };
 
@@ -93,12 +96,13 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
 
   render(): JSX.Element {
     const {
+      apiKey,
       merchant,
       isValid,
       bip70Payload
     } = this.state;
 
-    console.log('companyName', merchant.companyName)
+    console.log("companyName", merchant.companyName)
 
     return (
       <React.Fragment>
@@ -108,6 +112,7 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
           markValid={this.markValid}
           markInvalid={this.markInvalid}
           updateBip70Payload={this.updateBip70Payload}
+          apiKey = {apiKey}
         />
 
         <div
