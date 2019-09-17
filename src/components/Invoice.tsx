@@ -47,7 +47,13 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
       apiKey = merchantInfo.apiKey;
     }
 
-    const resp = await this.mockApiCall(apiKey);
+   //const resp = await this.mockApiCall(apiKey);
+   const resp = {
+    currency: "USD",
+    destinationAddress: merchantInfo.settings.address,
+    companyName: merchantInfo.name
+  }
+  console.log('resp', resp)
     this.setState({ merchant: resp });
   };
 
@@ -87,15 +93,18 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
 
   render(): JSX.Element {
     const {
-      merchant: { companyName },
+      merchant,
       isValid,
       bip70Payload
     } = this.state;
 
+    console.log('companyName', merchant.companyName)
+
     return (
       <React.Fragment>
         <BchInput
-          companyName={companyName}
+          companyName={merchant.companyName}
+          destinationAddress={merchant.destinationAddress}
           markValid={this.markValid}
           markInvalid={this.markInvalid}
           updateBip70Payload={this.updateBip70Payload}

@@ -11,6 +11,7 @@ const language = window.navigator.userLanguage || window.navigator.language;
 
 export interface BchInputProps {
   companyName: string;
+  destinationAddress: string;
   markValid: Function;
   markInvalid: Function;
   updateBip70Payload: Function;
@@ -215,7 +216,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
       } = {
         token_id: tokenID,
         slp_outputs: [
-          { address: "1Nmo9N3ZVsL8GFrv6uNfr55a9ni4RoT7Fn", amount: spiceAmount }
+          { address: this.props.destinationAddress, amount: spiceAmount }
         ]
       };
       return updateBip70Payload(slpTxRequest);
@@ -238,7 +239,7 @@ class BchInput extends React.Component<BchInputProps, BchInputState> {
           //   amount: 700
           // },
           {
-            address: "bitcoincash:qqztecjxmglf6hdhhggrc20zgzf7grfz7q6vkhx6jl",
+            address: this.props.destinationAddress,
             fiatAmount: floatVal.toFixed(decimalPlaces)
           }
         ]

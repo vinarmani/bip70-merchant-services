@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Link, Redirect } from "react-router-dom";
 import store from "store";
+import axios from "axios";
+import { AxiosResponse } from "axios";
 
 const cryptoSVG = require("../crypto.svg");
 
@@ -43,23 +45,32 @@ export class Init extends React.Component<InitProps, InitState> {
     this.setState({ id: value });
   };
 
-  validateID = (id: string) => {
+  validateID = async (id: string) => {
     // mock api response with merchant id
-    const mockResponse = {
+    /*const mockResponse = {
       apiKey: "asdjfew7yoyhafsadfa",
       success: true
-    };
+    }; */
+
+    const mockResponse: AxiosResponse = await axios.get(
+      `https://pay.bitcoin.com/am/${id}`,
+      { headers: { Accept: "application/json" } }
+    );
+
+    if (mockResponse.status !== 200) {
+      return this.setState({ errorMsg: "invalid id" });
+    }
+
+    mockResponse.data.apiKey = id;
+
+    this.saveMerchantID(mockResponse.data);
 
     this.setState({
       response: mockResponse,
       errorMsg: ""
     });
 
-    if (!mockResponse.success) {
-      return this.setState({ errorMsg: "invalid id" });
-    }
 
-    this.saveMerchantID(mockResponse);
   };
 
   saveMerchantID = (response: object) => {
@@ -69,8 +80,9 @@ export class Init extends React.Component<InitProps, InitState> {
   render(): JSX.Element {
     const merchantInfo = store.get("merchant");
     const hasMerchantSaved = merchantInfo !== undefined;
-
+    
     if (hasMerchantSaved) {
+      console.log('redirecting')
       return (
         <Redirect
           push
@@ -106,14 +118,7 @@ export class Init extends React.Component<InitProps, InitState> {
             this.validateID(id);
           }}
         >
-          <Link
-            to={{
-              pathname: "/invoice",
-              response
-            }}
-          >
-            Proceed
-          </Link>
+          <Link to="#">Proceed</Link>
         </div>
       </div>
     );
