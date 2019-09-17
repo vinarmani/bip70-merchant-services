@@ -56,7 +56,6 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
     destinationAddress: merchantInfo.settings.address,
     companyName: merchantInfo.name
   }
-  console.log("resp", resp)
     this.setState({ merchant: resp });
   };
 
@@ -101,8 +100,6 @@ export class Invoice extends React.Component<InvoiceProps, InvoiceState> {
       isValid,
       bip70Payload
     } = this.state;
-
-    console.log("companyName", merchant.companyName)
 
     return (
       <React.Fragment>

@@ -81,7 +81,6 @@ export class Init extends React.Component<InitProps, InitState> {
     const merchantInfo = store.get("merchant");
     const hasMerchantSaved = merchantInfo !== undefined;
     if (hasMerchantSaved) {
-      console.log("redirecting")
       return (
         <Redirect
           push
